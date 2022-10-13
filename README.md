@@ -1,13 +1,7 @@
-# Linux-editing-working-with-files
-
-run these commands before you start the lab:
-- sudo mkdir -p  ~/mydir/mydir2
-- sudo touch  ~/mydir/mydir2/yourname.txt
-- cp /var/log/syslog   ~/mydir/securecopy.txt 
-----------------------------------------------------------------
-- cksum securecopy.txt and save the output as screen shot
-- open  ~/mydir/securecopy.txt with nano editor and replace all "root" keywords with yourname and exit the nano
-- again cksum securecopy.txt and save the output as screen shot and write your observation
-- use the find command to find yourname.txt in your environment 
-- Use man page with the "useradd" command and save the output in "useradd-man.txt" using what you have learned in "stdin/stdout" lesson, then grep the word "password" from the "useradd-man.txt" you have created and take a screen shot for the grep output   
-- use the diff command on /var/log/syslog and ~/mydir/securecopy.txt  file and save the output as screen shot
+![Hash Command](https://user-images.githubusercontent.com/113826794/195601848-5a1d274d-7fba-408f-910e-e616ad8e65ee.png)
+![Screenshot 2022-10-13 151825](https://user-images.githubusercontent.com/113826794/195601852-dade1296-c251-4598-ad86-597cc1a4c155.png)
+![Use diff Command](https://user-images.githubusercontent.com/113826794/195601856-d4bfdf95-6029-4b90-990e-5c043fd6fb3f.png)
+![Use find Command](https://user-images.githubusercontent.com/113826794/195601864-89a6d9a5-82cc-4357-b691-1f7957da9adc.png)
+![Use grep command](https://user-images.githubusercontent.com/113826794/195601868-789f16cd-adcc-4895-a91f-b3a9bcfcc060.png)
+![Change HASH because there's change in file](https://user-images.githubusercontent.com/113826794/195601869-7f73c18f-679f-478d-b4a6-ad82844bce12.png)
+![check sum before change in file](https://user-images.githubusercontent.com/113826794/195601871-b5d14e89-946a-4249-b07a-d79207d44783.png)

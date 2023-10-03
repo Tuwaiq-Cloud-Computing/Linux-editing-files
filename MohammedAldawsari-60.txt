@@ -1,0 +1,78 @@
+Linux-editing-working-with-files
+
+-----------------------------------------------------------------------
+Setup:
+
+run these commands before you start the lab:
+
+[10/03/23]seed@VM:~$ sudo mkdir -p ~/mydir/mydir2
+[10/03/23]seed@VM:~$ sudo touch ~/mydir/mydir2/yourname.txt
+[10/03/23]seed@VM:~$ cp /var/log/anaconda/syslog ~/mydir/securecopy.txt
+cp: cannot stat '/var/log/anaconda/syslog': No such file or directory
+
+to solve the problem ==>
+
+[10/03/23]seed@VM:~$ echo "This is a sample log for testing purposes." | sudo tee ~/mydir/samplelog.txt > /dev/null
+
+[10/03/23]seed@VM:~$ sudo cp ~/mydir/samplelog.txt ~/mydir/securecopy.txt
+
+
+
+------cksum securecopy.txt and save the output as screen shot.-------------------
+
+[10/03/23]seed@VM:~$ cd ~/mydir
+[10/03/23]seed@VM:~/mydir$ cksum securecopy.txt
+3889373536 43 securecopy.txt
+
+------open ~/mydir/securecopy.txt with nano OR vim editor and replace all "root" keywords with yourname and exit the nano.-------------------
+
+
+┌──(kali㉿kali)-[~/mydir]
+└─$ nano ~/mydir/securecopy.txt
+
+------again cksum securecopy.txt and save the output as screen shot and write your observation.-------------------
+
+┌──(kali㉿kali)-[~/mydir]
+└─$ sudo cksum ~/mydir/securecopy.txt
+
+1882508439 1165578 /home/kali/mydir/securecopy.txt
+
+------use the find command to find yourname.txt in your environment and save the output as screen shot.-------------------
+
+┌──(kali㉿kali)-[~/mydir]
+└─$ find / -name mohammed.txt 2>/dev/null
+
+/home/kali/mohammed.txt
+
+---------------Use man page with the "useradd" command and save the output in "useradd-man.txt" using what you have learned in "stdin/stdout" lesson, then grep the word "password" from the "useradd-man.txt" you have created and take a screen shot for the grep output.--------------------------
+
+┌──(root㉿kali)-[/home/kali/mydir]
+└─# man useradd | col -b > useradd-man.txt
+
+┌──(root㉿kali)-[/home/kali/mydir]
+└─# grep "password" useradd-man.txt
+
+	   The number of days after a password expires until the account is
+	   the password has expired, and a value of -1 disables the feature.
+	   account to turn off password aging, even though system account has
+	   no password at all. Multiple -K options can be specified, e.g.:
+       -p, --password PASSWORD
+	   The encrypted password, as returned by crypt(3). The default is to
+	   disable the password.
+	   Note: This option is not recommended because the password (or
+	   encrypted password) will be visible by users listing the processes.
+	   You should make sure the password respects the system's password
+	   The number of days after a password has expired before the account
+	   same password, and same GID).
+	   The maximum number of days a password may be used. If the password
+	   is older than this, a password change will be forced. If not
+	   The minimum number of days allowed between password changes. Any
+	   password changes attempted sooner than this will be rejected. If
+	   The number of days warning given before a password expires. A zero
+	   Shadow password suite configuration.
+	   can't update password file
+
+---------------use the diff command on /var/log/anaconda/syslog and ~/mydir/securecopy.txt file and save the output as screen shot --------------------------
+
+diff /var/log/anaconda/syslog /home/kali/mydir/securecopy.txt
+
